@@ -20,7 +20,8 @@ const VoiceAssist = () => {
           const routes = {
             'home': '/',
             'object detection': '/objectdetection',
-            'image caption': '/imgCaption'
+            'image caption': '/imgCaption',
+            'location': '/location',
           };
           if (routes[page.toLowerCase()]) {
             navigate(routes[page.toLowerCase()]);
@@ -37,11 +38,13 @@ const VoiceAssist = () => {
   }
 
   return (
-    <div>
-      <p>Microphone: {listening ? 'on' : 'off'}</p>
-      <button onClick={SpeechRecognition.startListening}>Start</button>
-      <button onClick={SpeechRecognition.stopListening}>Stop</button>
-      <button onClick={resetTranscript}>Reset</button>
+    <div className="border shadow-lg rounded-xl w-fit p-4 px-6 mx-auto m-4 grid gap-3">
+      <span>🎤 Microphone - <span className="font-semibold">{listening ? 'ON' : 'OFF'}</span></span>
+      <div className="flex gap-3">
+        <button className='rounded-full p-0.5 px-2 bg-blue-300' onClick={SpeechRecognition.startListening}>Start</button>
+        <button className='rounded-full p-0.5 px-2 bg-red-300' onClick={SpeechRecognition.stopListening}>Stop</button>
+        <button className='rounded-full p-0.5 px-2 bg-neutral-300' onClick={resetTranscript}>Reset</button>
+      </div>
       <p>Transcript: {transcript}</p>
     </div>
   );
