@@ -25,15 +25,28 @@ const drawRect = (detections, ctx) => {
       position = "right";
     }
 
+    const area = width * height;
+    // console.log("AREA: ", area);
+    let distance;
+    if (area < 40000) {
+      distance = "far";
+    } else if (area < 70000) {
+      distance = "medium";
+    } else {
+      distance = "close";
+    }
+    // console.log(distance);
+    
     // Set styling
-    const color = Math.floor(Math.random() * 16777215).toString(16);
+    // const color = Math.floor(Math.random() * 167).toString(16);
+    const color = "0000FF"
     ctx.strokeStyle = '#' + color;
     ctx.font = '20px Arial';
 
     // Draw rectangles and text
     ctx.beginPath();
     ctx.fillStyle = '#' + color;
-    ctx.fillText(`${text} (${position})`, x, y > 10 ? y - 5 : y + 15); // Adjust text position
+    ctx.fillText(`${text} [position: ${position}] [distance: ${distance}]`, x, y > 10 ? y - 5 : y + 15); // Adjust text position
     ctx.rect(x, y, width, height);
     ctx.stroke();
   });
