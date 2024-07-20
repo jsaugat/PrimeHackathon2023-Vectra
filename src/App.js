@@ -1,4 +1,5 @@
 import React from 'react';
+import "./App.css";
 import { ImgCaption } from './Pages/imgcaption.jsx'; // Adjust the path if needed
 import ObjDetection from './Pages/objdetection.jsx'; // Adjust the path if needed
 import './App.css'; // Optional, for additional styles
