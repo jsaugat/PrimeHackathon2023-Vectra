@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ImgCaption } from './Pages/imgcaption.jsx'; // Adjust the path if needed
+import ObjDetection from './Pages/objdetection.jsx'; // Adjust the path if needed
+import './App.css'; // Optional, for additional styles
+import Header from './Components/Header.jsx'; // Ensure the correct path
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home.jsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/objectdetection' element={<ObjDetection />} />
+          <Route path='/imgCaption' element={<ImgCaption />} />
+          {/* Add more routes here if needed */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
