@@ -1,0 +1,2164 @@
+{
+  "format": "graph-model",
+  "generatedBy": "2.9.0",
+  "convertedBy": "TensorFlow.js Converter v3.12.0",
+  "signature": {
+    "inputs": {
+      "input_1:0": {
+        "name": "input_1:0",
+        "dtype": "DT_FLOAT",
+        "tensorShape": {
+          "dim": [
+            { "size": "1" },
+            { "size": "256" },
+            { "size": "192" },
+            { "size": "3" }
+          ]
+        }
+      }
+    },
+    "outputs": {
+      "Identity:0": {
+        "name": "Identity:0",
+        "dtype": "DT_FLOAT",
+        "tensorShape": {
+          "dim": [
+            { "size": "1" },
+            { "size": "256" },
+            { "size": "192" },
+            { "size": "1" }
+          ]
+        }
+      }
+    }
+  },
+  "modelTopology": {
+    "node": [
+      {
+        "name": "model/tf.compat.v1.zeros_like_11/zeros_like",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "1" },
+                  { "size": "1" },
+                  { "size": "1" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.math.reduce_sum_11/Sum/reduction_indices",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.math.greater/Greater",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_BOOL" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_BOOL",
+              "tensorShape": {
+                "dim": [
+                  { "size": "1" },
+                  { "size": "256" },
+                  { "size": "192" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.math.reduce_sum_10/Sum/reduction_indices",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_9/strided_slice/stack",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_9/strided_slice/stack_1",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_9/strided_slice/stack_2",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem/strided_slice/stack",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem/strided_slice/stack_1",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem/strided_slice/stack_2",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.expand_dims/ExpandDims/dim",
+        "op": "Const",
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.stack_2/stack",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "1" },
+                  { "size": "256" },
+                  { "size": "192" },
+                  { "size": "6" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.concat/concat/axis",
+        "op": "Const",
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/upsample_5/PartitionedCall/mul",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_15/strided_slice/stack",
+        "op": "Const",
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_15/strided_slice/stack_1",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_15/strided_slice/stack_2",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.math.greater_13/Greater/y",
+        "op": "Const",
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_FLOAT", "tensorShape": {} } },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "input_1",
+        "op": "Placeholder",
+        "attr": {
+          "shape": {
+            "shape": {
+              "dim": [
+                { "size": "1" },
+                { "size": "256" },
+                { "size": "192" },
+                { "size": "3" }
+              ]
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/tf.cast_4/Cast",
+        "op": "Cast",
+        "input": ["model/tf.math.greater/Greater"],
+        "attr": {
+          "DstT": { "type": "DT_FLOAT" },
+          "SrcT": { "type": "DT_BOOL" },
+          "Truncate": { "b": false }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem/strided_slice",
+        "op": "StridedSlice",
+        "input": [
+          "input_1",
+          "model/tf.__operators__.getitem/strided_slice/stack",
+          "model/tf.__operators__.getitem/strided_slice/stack_1",
+          "model/tf.__operators__.getitem/strided_slice/stack_2"
+        ],
+        "attr": {
+          "shrink_axis_mask": { "i": "1" },
+          "T": { "type": "DT_FLOAT" },
+          "begin_mask": { "i": "0" },
+          "ellipsis_mask": { "i": "2" },
+          "new_axis_mask": { "i": "0" },
+          "end_mask": { "i": "0" },
+          "Index": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/tf.math.multiply_25/ArithmeticOptimizer/ReplaceMulWithSquare_Mul",
+        "op": "Square",
+        "input": ["model/tf.cast_4/Cast"],
+        "attr": {
+          "_grappler_ArithmeticOptimizer_MinimizeBroadcasts": { "b": true },
+          "T": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/tf.expand_dims/ExpandDims",
+        "op": "ExpandDims",
+        "input": [
+          "model/tf.__operators__.getitem/strided_slice",
+          "model/tf.expand_dims/ExpandDims/dim"
+        ],
+        "attr": { "Tdim": { "type": "DT_INT32" }, "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.concat/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/tf.expand_dims/ExpandDims",
+          "model/tf.stack_2/stack",
+          "model/tf.concat/concat/axis"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "Tidx": { "type": "DT_INT32" },
+          "N": { "i": "2" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "9" },
+                  { "size": "8" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "8" }] }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_4",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "8" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "8" },
+                  { "size": "16" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "16" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_7",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "16" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "16" },
+                  { "size": "32" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "32" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_10",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "32" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "32" },
+                  { "size": "64" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "64" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_13",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "64" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "64" },
+                  { "size": "128" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "128" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_16",
+        "op": "Const",
+        "input": ["^model/tf.concat/concat"],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "128" },
+                  { "size": "1" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/tf.concat/concat",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "padding": { "s": "U0FNRQ==" },
+          "data_format": { "s": "TkhXQw==" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "explicit_paddings": { "list": {} },
+          "epsilon": { "f": 0.0 },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "num_args": { "i": "1" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "use_cudnn_on_gpu": { "b": true }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/downsample/depthwise",
+        "op": "DepthwiseConv2dNative",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/relu_0/Relu",
+          "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_4"
+        ],
+        "attr": {
+          "explicit_paddings": { "list": {} },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "padding": { "s": "U0FNRQ==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/downsample/depthwise",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "padding": { "s": "U0FNRQ==" },
+          "data_format": { "s": "TkhXQw==" },
+          "T": { "type": "DT_FLOAT" },
+          "use_cudnn_on_gpu": { "b": true },
+          "num_args": { "i": "1" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "epsilon": { "f": 0.0 }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/downsample/depthwise",
+        "op": "DepthwiseConv2dNative",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/relu_0/Relu",
+          "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_7"
+        ],
+        "attr": {
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "T": { "type": "DT_FLOAT" },
+          "padding": { "s": "U0FNRQ==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/downsample/depthwise",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "epsilon": { "f": 0.0 },
+          "use_cudnn_on_gpu": { "b": true },
+          "data_format": { "s": "TkhXQw==" },
+          "padding": { "s": "U0FNRQ==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "num_args": { "i": "1" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "explicit_paddings": { "list": {} }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/downsample/depthwise",
+        "op": "DepthwiseConv2dNative",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/relu_0/Relu",
+          "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_10"
+        ],
+        "attr": {
+          "padding": { "s": "U0FNRQ==" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "data_format": { "s": "TkhXQw==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/downsample/depthwise",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "num_args": { "i": "1" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "epsilon": { "f": 0.0 },
+          "explicit_paddings": { "list": {} },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "use_cudnn_on_gpu": { "b": true },
+          "data_format": { "s": "TkhXQw==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/downsample/depthwise",
+        "op": "DepthwiseConv2dNative",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/relu_0/Relu",
+          "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_13"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "data_format": { "s": "TkhXQw==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/downsample/depthwise",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "use_cudnn_on_gpu": { "b": true },
+          "padding": { "s": "U0FNRQ==" },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "epsilon": { "f": 0.0 },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "num_args": { "i": "1" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "data_format": { "s": "TkhXQw==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise",
+        "op": "DepthwiseConv2dNative",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/relu_0/Relu",
+          "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_16"
+        ],
+        "attr": {
+          "data_format": { "s": "TkhXQw==" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "padding": { "s": "U0FNRQ==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "8" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/upsample/mul",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "4" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_45",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "16" },
+                  { "size": "16" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/upsample/mul",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "4" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_42",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "32" },
+                  { "size": "32" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/upsample/mul",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "4" }] }
+            }
+          },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_39",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "64" },
+                  { "size": "64" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/upsample/mul",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "4" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_36",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "128" },
+                  { "size": "128" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/upsample/mul",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_INT32",
+              "tensorShape": { "dim": [{ "size": "4" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_33",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "4" },
+                  { "size": "4" },
+                  { "size": "256" },
+                  { "size": "256" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "128" },
+                  { "size": "256" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "256" }] }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/concatenate/concat/axis",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "384" },
+                  { "size": "128" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "128" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/concatenate/concat/axis",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "192" },
+                  { "size": "64" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "64" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/concatenate/concat/axis",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_INT32" },
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "96" },
+                  { "size": "32" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "32" }] }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/concatenate/concat/axis",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "48" },
+                  { "size": "16" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "16" }] }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/concatenate/concat/axis",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "value": { "tensor": { "dtype": "DT_INT32", "tensorShape": {} } },
+          "dtype": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise"
+        ],
+        "attr": {
+          "dtype": { "type": "DT_FLOAT" },
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "24" },
+                  { "size": "8" }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/downsample/depthwise",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "data_format": { "s": "TkhXQw==" },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "num_args": { "i": "1" },
+          "use_cudnn_on_gpu": { "b": true },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "epsilon": { "f": 0.0 }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/upsample/conv2d_transpose",
+        "op": "Conv2DBackpropInput",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/upsample/mul",
+          "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_33",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/relu_0/Relu"
+        ],
+        "attr": {
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "explicit_paddings": { "list": {} },
+          "use_cudnn_on_gpu": { "b": true },
+          "data_format": { "s": "TkhXQw==" },
+          "padding": { "s": "U0FNRQ==" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/concatenate/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/upsample/conv2d_transpose",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/relu_0/Relu",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/concatenate/concat/axis"
+        ],
+        "attr": {
+          "N": { "i": "2" },
+          "T": { "type": "DT_FLOAT" },
+          "Tidx": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/concatenate/concat",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "use_cudnn_on_gpu": { "b": true },
+          "explicit_paddings": { "list": {} },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "T": { "type": "DT_FLOAT" },
+          "epsilon": { "f": 0.0 },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "num_args": { "i": "1" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "padding": { "s": "U0FNRQ==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/upsample/conv2d_transpose",
+        "op": "Conv2DBackpropInput",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/upsample/mul",
+          "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_36",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/relu_0/Relu"
+        ],
+        "attr": {
+          "data_format": { "s": "TkhXQw==" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "T": { "type": "DT_FLOAT" },
+          "use_cudnn_on_gpu": { "b": true },
+          "explicit_paddings": { "list": {} },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/concatenate/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/upsample/conv2d_transpose",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/relu_0/Relu",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/concatenate/concat/axis"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "N": { "i": "2" },
+          "Tidx": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/concatenate/concat",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "padding": { "s": "U0FNRQ==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "epsilon": { "f": 0.0 },
+          "explicit_paddings": { "list": {} },
+          "num_args": { "i": "1" },
+          "data_format": { "s": "TkhXQw==" },
+          "use_cudnn_on_gpu": { "b": true }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/upsample/conv2d_transpose",
+        "op": "Conv2DBackpropInput",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/upsample/mul",
+          "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_39",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/relu_0/Relu"
+        ],
+        "attr": {
+          "padding": { "s": "U0FNRQ==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "explicit_paddings": { "list": {} },
+          "use_cudnn_on_gpu": { "b": true }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/concatenate/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/upsample/conv2d_transpose",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/relu_0/Relu",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/concatenate/concat/axis"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "N": { "i": "2" },
+          "Tidx": { "type": "DT_INT32" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/concatenate/concat",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "data_format": { "s": "TkhXQw==" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "explicit_paddings": { "list": {} },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "num_args": { "i": "1" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "use_cudnn_on_gpu": { "b": true },
+          "T": { "type": "DT_FLOAT" },
+          "epsilon": { "f": 0.0 }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/upsample/conv2d_transpose",
+        "op": "Conv2DBackpropInput",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/upsample/mul",
+          "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_42",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/relu_0/Relu"
+        ],
+        "attr": {
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "data_format": { "s": "TkhXQw==" },
+          "use_cudnn_on_gpu": { "b": true },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } },
+          "padding": { "s": "U0FNRQ==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/concatenate/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/upsample/conv2d_transpose",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/relu_0/Relu",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/concatenate/concat/axis"
+        ],
+        "attr": {
+          "Tidx": { "type": "DT_INT32" },
+          "N": { "i": "2" },
+          "T": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/relu_0/Relu",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/concatenate/concat",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "use_cudnn_on_gpu": { "b": true },
+          "T": { "type": "DT_FLOAT" },
+          "padding": { "s": "U0FNRQ==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "explicit_paddings": { "list": {} },
+          "num_args": { "i": "1" },
+          "data_format": { "s": "TkhXQw==" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA==", "UmVsdQ=="] } },
+          "epsilon": { "f": 0.0 }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/upsample/conv2d_transpose",
+        "op": "Conv2DBackpropInput",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/upsample/mul",
+          "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_45",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/relu_0/Relu"
+        ],
+        "attr": {
+          "use_cudnn_on_gpu": { "b": true },
+          "T": { "type": "DT_FLOAT" },
+          "explicit_paddings": { "list": {} },
+          "padding": { "s": "U0FNRQ==" },
+          "data_format": { "s": "TkhXQw==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "strides": { "list": { "i": ["1", "2", "2", "1"] } }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/concatenate/concat",
+        "op": "ConcatV2",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/upsample/conv2d_transpose",
+          "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/relu_0/Relu",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/concatenate/concat/axis"
+        ],
+        "attr": {
+          "Tidx": { "type": "DT_INT32" },
+          "T": { "type": "DT_FLOAT" },
+          "N": { "i": "2" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/BiasAdd",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/concatenate/concat",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/Conv2D/ReadVariableOp",
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "explicit_paddings": { "list": {} },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "use_cudnn_on_gpu": { "b": true },
+          "num_args": { "i": "1" },
+          "epsilon": { "f": 0.0 },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA=="] } },
+          "padding": { "s": "U0FNRQ==" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/relu_0/Relu",
+        "op": "Relu",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/BiasAdd"
+        ],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/WarpingModel/output_5/StatefulPartitionedCall/Conv2D/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/relu_0/Relu"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  { "size": "3" },
+                  { "size": "3" },
+                  { "size": "8" },
+                  { "size": "2" }
+                ]
+              }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/output_5/StatefulPartitionedCall/BiasAdd/ReadVariableOp",
+        "op": "Const",
+        "input": [
+          "^model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/relu_0/Relu"
+        ],
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": { "dim": [{ "size": "2" }] }
+            }
+          },
+          "dtype": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/WarpingModel/output_5/StatefulPartitionedCall/BiasAdd",
+        "op": "_FusedConv2D",
+        "input": [
+          "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/relu_0/Relu",
+          "model/WarpingModel/output_5/StatefulPartitionedCall/Conv2D/ReadVariableOp",
+          "model/WarpingModel/output_5/StatefulPartitionedCall/BiasAdd/ReadVariableOp"
+        ],
+        "device": "/device:CPU:0",
+        "attr": {
+          "num_args": { "i": "1" },
+          "fused_ops": { "list": { "s": ["Qmlhc0FkZA=="] } },
+          "T": { "type": "DT_FLOAT" },
+          "strides": { "list": { "i": ["1", "1", "1", "1"] } },
+          "data_format": { "s": "TkhXQw==" },
+          "dilations": { "list": { "i": ["1", "1", "1", "1"] } },
+          "padding": { "s": "U0FNRQ==" },
+          "explicit_paddings": { "list": {} },
+          "epsilon": { "f": 0.0 },
+          "use_cudnn_on_gpu": { "b": true }
+        }
+      },
+      {
+        "name": "model/WarpingModel/upsample_5/PartitionedCall/resize/ResizeBilinear",
+        "op": "ResizeBilinear",
+        "input": [
+          "model/WarpingModel/output_5/StatefulPartitionedCall/BiasAdd",
+          "model/WarpingModel/upsample_5/PartitionedCall/mul"
+        ],
+        "attr": {
+          "align_corners": { "b": false },
+          "T": { "type": "DT_FLOAT" },
+          "half_pixel_centers": { "b": true }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_9/strided_slice",
+        "op": "StridedSlice",
+        "input": [
+          "model/WarpingModel/upsample_5/PartitionedCall/resize/ResizeBilinear",
+          "model/tf.__operators__.getitem_9/strided_slice/stack",
+          "model/tf.__operators__.getitem_9/strided_slice/stack_1",
+          "model/tf.__operators__.getitem_9/strided_slice/stack_2"
+        ],
+        "attr": {
+          "Index": { "type": "DT_INT32" },
+          "end_mask": { "i": "0" },
+          "begin_mask": { "i": "0" },
+          "ellipsis_mask": { "i": "1" },
+          "new_axis_mask": { "i": "0" },
+          "T": { "type": "DT_FLOAT" },
+          "shrink_axis_mask": { "i": "0" }
+        }
+      },
+      {
+        "name": "model/tf.__operators__.getitem_15/strided_slice",
+        "op": "StridedSlice",
+        "input": [
+          "model/WarpingModel/upsample_5/PartitionedCall/resize/ResizeBilinear",
+          "model/tf.__operators__.getitem_15/strided_slice/stack",
+          "model/tf.__operators__.getitem_15/strided_slice/stack_1",
+          "model/tf.__operators__.getitem_15/strided_slice/stack_2"
+        ],
+        "attr": {
+          "end_mask": { "i": "0" },
+          "begin_mask": { "i": "0" },
+          "Index": { "type": "DT_INT32" },
+          "T": { "type": "DT_FLOAT" },
+          "new_axis_mask": { "i": "0" },
+          "shrink_axis_mask": { "i": "0" },
+          "ellipsis_mask": { "i": "1" }
+        }
+      },
+      {
+        "name": "model/tf.math.multiply_26/Mul",
+        "op": "Mul",
+        "input": [
+          "model/tf.math.multiply_25/ArithmeticOptimizer/ReplaceMulWithSquare_Mul",
+          "model/tf.__operators__.getitem_9/strided_slice"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "_grappler_ArithmeticOptimizer_MinimizeBroadcasts": { "b": true }
+        }
+      },
+      {
+        "name": "model/tf.math.greater_13/Greater",
+        "op": "Greater",
+        "input": [
+          "model/tf.__operators__.getitem_15/strided_slice",
+          "model/tf.math.greater_13/Greater/y"
+        ],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.math.reduce_sum_11/Sum",
+        "op": "Sum",
+        "input": [
+          "model/tf.math.multiply_26/Mul",
+          "model/tf.math.reduce_sum_11/Sum/reduction_indices"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "Tidx": { "type": "DT_INT32" },
+          "keep_dims": { "b": true }
+        }
+      },
+      {
+        "name": "model/tf.math.multiply_28/Mul",
+        "op": "Mul",
+        "input": [
+          "model/tf.math.multiply_26/Mul",
+          "model/tf.__operators__.getitem_9/strided_slice"
+        ],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.cast_5/Cast",
+        "op": "Cast",
+        "input": ["model/tf.math.greater_13/Greater"],
+        "attr": {
+          "SrcT": { "type": "DT_BOOL" },
+          "Truncate": { "b": false },
+          "DstT": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/tf.math.reduce_sum_10/Sum",
+        "op": "Sum",
+        "input": [
+          "model/tf.math.multiply_28/Mul",
+          "model/tf.math.reduce_sum_10/Sum/reduction_indices"
+        ],
+        "attr": {
+          "T": { "type": "DT_FLOAT" },
+          "Tidx": { "type": "DT_INT32" },
+          "keep_dims": { "b": true }
+        }
+      },
+      {
+        "name": "model/tf.math.truediv_11/truediv",
+        "op": "RealDiv",
+        "input": [
+          "model/tf.math.reduce_sum_11/Sum",
+          "model/tf.math.reduce_sum_10/Sum"
+        ],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.math.is_nan_5/IsNan",
+        "op": "IsNan",
+        "input": ["model/tf.math.truediv_11/truediv"],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.compat.v1.where_11/Select",
+        "op": "Select",
+        "input": [
+          "model/tf.math.is_nan_5/IsNan",
+          "model/tf.compat.v1.zeros_like_11/zeros_like",
+          "model/tf.math.truediv_11/truediv"
+        ],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      },
+      {
+        "name": "model/tf.math.multiply_29/Mul",
+        "op": "Mul",
+        "input": [
+          "model/tf.compat.v1.where_11/Select",
+          "model/tf.__operators__.getitem_9/strided_slice"
+        ],
+        "attr": {
+          "_grappler_ArithmeticOptimizer_MinimizeBroadcasts": { "b": true },
+          "T": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "model/tf.math.multiply_54/Mul",
+        "op": "Mul",
+        "input": ["model/tf.math.multiply_29/Mul", "model/tf.cast_5/Cast"],
+        "attr": {
+          "_grappler_ArithmeticOptimizer_MinimizeBroadcasts": { "b": true },
+          "T": { "type": "DT_FLOAT" }
+        }
+      },
+      {
+        "name": "Identity",
+        "op": "Identity",
+        "input": ["model/tf.math.multiply_54/Mul"],
+        "attr": { "T": { "type": "DT_FLOAT" } }
+      }
+    ],
+    "library": {},
+    "versions": {}
+  },
+  "weightsManifest": [
+    {
+      "paths": [
+        "group1-shard1of3.bin",
+        "group1-shard2of3.bin",
+        "group1-shard3of3.bin"
+      ],
+      "weights": [
+        {
+          "name": "model/tf.compat.v1.zeros_like_11/zeros_like",
+          "shape": [1, 1, 1, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/tf.math.reduce_sum_11/Sum/reduction_indices",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.math.greater/Greater",
+          "shape": [1, 256, 192, 1],
+          "dtype": "bool"
+        },
+        {
+          "name": "model/tf.math.reduce_sum_10/Sum/reduction_indices",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_9/strided_slice/stack",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_9/strided_slice/stack_1",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_9/strided_slice/stack_2",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem/strided_slice/stack",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem/strided_slice/stack_1",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem/strided_slice/stack_2",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.expand_dims/ExpandDims/dim",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.stack_2/stack",
+          "shape": [1, 256, 192, 6],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/tf.concat/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/upsample_5/PartitionedCall/mul",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_15/strided_slice/stack",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_15/strided_slice/stack_1",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.__operators__.getitem_15/strided_slice/stack_2",
+          "shape": [2],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/tf.math.greater_13/Greater/y",
+          "shape": [],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 9, 8],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_0/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [8],
+          "dtype": "float32"
+        },
+        {
+          "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_4",
+          "shape": [4, 4, 8, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 8, 16],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_1/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [16],
+          "dtype": "float32"
+        },
+        {
+          "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_7",
+          "shape": [4, 4, 16, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 16, 32],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_2/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [32],
+          "dtype": "float32"
+        },
+        {
+          "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_10",
+          "shape": [4, 4, 32, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 32, 64],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_3/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [64],
+          "dtype": "float32"
+        },
+        {
+          "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_13",
+          "shape": [4, 4, 64, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 64, 128],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/encoder/StatefulPartitionedCall/encoder_4/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [128],
+          "dtype": "float32"
+        },
+        {
+          "name": "Func/model/WarpingModel/encoder/StatefulPartitionedCall/input/_16",
+          "shape": [4, 4, 128, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [8],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/upsample/mul",
+          "shape": [4],
+          "dtype": "int32"
+        },
+        {
+          "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_45",
+          "shape": [4, 4, 16, 16],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/upsample/mul",
+          "shape": [4],
+          "dtype": "int32"
+        },
+        {
+          "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_42",
+          "shape": [4, 4, 32, 32],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/upsample/mul",
+          "shape": [4],
+          "dtype": "int32"
+        },
+        {
+          "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_39",
+          "shape": [4, 4, 64, 64],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/upsample/mul",
+          "shape": [4],
+          "dtype": "int32"
+        },
+        {
+          "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_36",
+          "shape": [4, 4, 128, 128],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/upsample/mul",
+          "shape": [4],
+          "dtype": "int32"
+        },
+        {
+          "name": "Func/model/WarpingModel/decoder/StatefulPartitionedCall/input/_33",
+          "shape": [4, 4, 256, 256],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 128, 256],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [256],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_0/concatenate/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 384, 128],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [128],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_1/concatenate/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 192, 64],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [64],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_2/concatenate/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 96, 32],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [32],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_3/concatenate/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 48, 16],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/conv_0/BiasAdd/ReadVariableOp",
+          "shape": [16],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_4/concatenate/concat/axis",
+          "shape": [],
+          "dtype": "int32"
+        },
+        {
+          "name": "model/WarpingModel/decoder/StatefulPartitionedCall/decoder_5/conv_0/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 24, 8],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/output_5/StatefulPartitionedCall/Conv2D/ReadVariableOp",
+          "shape": [3, 3, 8, 2],
+          "dtype": "float32"
+        },
+        {
+          "name": "model/WarpingModel/output_5/StatefulPartitionedCall/BiasAdd/ReadVariableOp",
+          "shape": [2],
+          "dtype": "float32"
+        }
+      ]
+    }
+  ]
+}

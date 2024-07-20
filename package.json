@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/depth-estimation": "^0.0.4",
     "@tensorflow/tfjs": "^4.20.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
