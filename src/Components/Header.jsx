@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <nav className="relative flex w-full items-center justify-between bg-white py-2 shadow-md dark:bg-gray-800 lg:flex-wrap lg:justify-start lg:py-4">
         <div className="flex w-full flex-wrap items-center justify-between px-3">
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <button
               className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-white lg:hidden"
               type="button"
@@ -31,10 +31,10 @@ const Header = () => {
                 </svg>
               </span>
             </button>
-          </div>
+          </div> */}
 
           <div
-            className="hidden lg:flex lg:w-full lg:items-center lg:justify-between"
+            className=" lg:flex lg:w-full lg:items-center lg:justify-between"
             id="navbarSupportedContent"
           >
             <ul className="flex flex-col lg:flex-row">
