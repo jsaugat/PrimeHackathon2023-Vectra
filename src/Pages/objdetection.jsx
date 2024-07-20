@@ -18,11 +18,11 @@ const drawRect = (detections, ctx) => {
     const objectCenterX = x + width / 2;
     let position;
     if (objectCenterX < canvasWidth / 3) {
-      position = "Left";
+      position = "left";
     } else if (objectCenterX < (2 * canvasWidth) / 3) {
-      position = "Center";
+      position = "center";
     } else {
-      position = "Right";
+      position = "right";
     }
 
     // Set styling
