@@ -3,6 +3,13 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Camera } from 'react-camera-pro';
 
+
+// use gesture 
+import { useDrag } from '@use-gesture/react';
+
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 const API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large";
 const headers = {
   "Authorization": "Bearer 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",
@@ -12,6 +19,9 @@ const headers = {
 function ImgCaption() {
     const [caption, setCaption] = useState('');
     const camera = useRef(null);
+
+    const navigate = useNavigate();
+    const location = useLocation();
   
     const query = async (imageBlob) => {
       try {
@@ -30,18 +40,28 @@ function ImgCaption() {
       const blob = await response.blob();
       query(blob);
     };
+
+
+    // gesture function trigger
+    const binnd = useDrag( ({ swipe:[swipeX]} )=>{
+      if (swipeX > 100) {
+       navigate('/home');
+      } else if( swipeX < -100) {
+        console.log(swipeX);
+
+      }
+    } );
+
+    console.log(location.pathname);
+
+
     return (
-      <div className="relative top-16 ">
-      <div className="camera-gesture h-screen wrap bg">
-        <div className='h-2/6 camera_section' >
+      <div className="relative">
+      <div className="camera-gesture h-auto wrap bg">
+        <div style={{height:"100%"}} className='camera_section' >
         <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />        
-        {caption && <p>{caption}</p>}
+        {caption && <p className='py-10' >{caption}</p>}
         </div>
-
-          <div className='h-full pt-5 gesture section bg-cyan-500 ' >
-          this is gesture section
-          </div>
-
       </div>
      
       </div>
