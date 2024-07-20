@@ -31,11 +31,17 @@ function ImgCaption() {
       query(blob);
     };
     return (
-      <div className="relative top-20 ">
-      <div style={{height:"90vh"}} className="bg-blue-400  camera-container bg">
-        <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleCapture}>Generate Caption</button>
+      <div className="relative top-16 ">
+      <div className="camera-gesture h-screen wrap bg">
+        <div className='h-2/6 camera_section' >
+        <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />        
         {caption && <p>{caption}</p>}
+        </div>
+
+          <div className='h-full pt-5 gesture section bg-cyan-500 ' >
+          this is gesture section
+          </div>
+
       </div>
      
       </div>
