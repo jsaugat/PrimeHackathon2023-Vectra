@@ -31,15 +31,15 @@ function ImgCaption() {
       query(blob);
     };
     return (
-      <div className="App">
-        <h1>Image Captioning</h1>
-        <div className="camera-container">
-          <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />
-        </div>
-        <button onClick={handleCapture}>Capture and Get Caption</button>
+      <div className="relative top-20 ">
+      <div style={{height:"90vh"}} className="bg-blue-400  camera-container bg">
+        <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleCapture}>Generate Caption</button>
         {caption && <p>{caption}</p>}
       </div>
-  );
+     
+      </div>
+    );
 }
 
 export { ImgCaption };
