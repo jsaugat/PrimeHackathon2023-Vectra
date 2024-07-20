@@ -35,7 +35,7 @@ const Header = () => {
         <div  class="flex flex-col items-center p-2 text-white hover:text-blue-500 active:text-blue-500" onclick="showSection('search')">
         <CircleDollarSign />
           
-        <p className='text-sm pt-2 ' >Monkey</p>
+        <p className='text-sm pt-2 ' >Money</p>
         </div>
         </Link>
 

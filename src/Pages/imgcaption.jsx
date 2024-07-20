@@ -56,12 +56,13 @@ function ImgCaption() {
 
 
     return (
-      <div className="relative">
+      <div onClick={ handleCapture }  className="relative">
       <div className="camera-gesture h-auto wrap bg">
         <div style={{height:"100%"}} className='camera_section' >
         <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />        
-        {caption && <p className='py-10' >{caption}</p>}
+        {caption && <p className='py-10 bg-blue-900 ' >{caption}</p>}
         </div>
+        
       </div>
      
       </div>
