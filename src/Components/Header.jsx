@@ -6,7 +6,6 @@ const Header = () => {
     <header>
       <nav className="relative flex w-full items-center justify-between bg-white py-2 shadow-md dark:bg-gray-800 lg:flex-wrap lg:justify-start lg:py-4">
         <div className="flex w-full flex-wrap items-center justify-between px-3">
-          
 
           <div
             className=" lg:flex lg:w-full lg:items-center lg:justify-between"
