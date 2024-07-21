@@ -39,7 +39,6 @@ const VoiceAssist = () => {
 
   return (
     <div className="absolute left-4 bg-white border shadow-md rounded-xl w-fit p-4 px-6 mx-auto m-4 grid gap-3">
-      <span>🎤 Microphone - <span className="font-semibold">{listening ? 'ON' : 'OFF'}</span></span>
       <div className="flex gap-3 mx-auto">
         <button className='rounded-full p-0.5 px-2.5 bg-blue-500 text-white' onClick={SpeechRecognition.startListening}>Start</button>
         <button className='rounded-full p-0.5 px-2.5 bg-red-500 text-white' onClick={SpeechRecognition.stopListening}>Stop</button>

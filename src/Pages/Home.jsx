@@ -1,8 +1,9 @@
 import React from 'react'
+// rrikesh
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='h-screen bg-red-300' >Welcome to the Blind Assistance Technology </div>
   )
 }
 
