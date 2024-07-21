@@ -1,87 +1,65 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import axios from 'axios';
 
 export const SpeechToText = () => {
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
-  const [loading, setLoading] = useState(false);
-  const [awake, setAwake] = useState(false);
+  const [answer, setAnswer] = useState('');
+  const [generatingAnswer, setGeneratingAnswer] = useState(false);
 
-  useEffect(() => {
-    if (transcript.toLowerCase().includes('hello ')) {
-      setAwake(true);
-      resetTranscript();
-      speak("How can I help you today?");
-    } else if (awake && transcript && !listening) {
-      handleGeminiAPI(transcript);
-    }
-  }, [transcript, listening]);
-
-  const handleVoiceCommand = async () => {
+  const handleVoiceCommand = useCallback(async () => {
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
       alert("Your browser doesn't support speech recognition.");
       return;
     }
 
     if (listening) {
+      // Stop listening and send the transcription to Gemini API
       SpeechRecognition.stopListening();
+      await handleGeminiAPI(transcript);
     } else {
+      // Start listening
       await SpeechRecognition.startListening({ continuous: true });
     }
-  };
-
-  const speak = (text) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      window.speechSynthesis.speak(utterance);
-    } else {
-      console.error('Speech Synthesis is not supported in this browser.');
-    }
-  };
+  }, [listening, transcript]);
 
   const handleGeminiAPI = async (command) => {
-    setLoading(true);
-    console.log('Command:', command);
-
+    setGeneratingAnswer(true);
+    setAnswer('Loading your answer... \n It might take up to 10 seconds');
     try {
-      const apiKey = 'AIzaSyDrLW5Q9ulAs4gX3xlmBLFIZLL3Pr8NVl0';
-      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-
-      const response = await axios.post(apiUrl, {
-        contents: [
-          {
-            parts: [
-              {
-                text: command
-              }
-            ]
-          }
-        ]
-      });
-
-      console.log('API Response:', response);
+      const response = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDrLW5Q9ulAs4gX3xlmBLFIZLL3Pr8NVl0`,
+        {
+          contents: [{ parts: [{ text: command }] }],
+        }
+      );
 
       const generatedText = response.data.candidates[0]?.content?.parts[0]?.text || 'No text generated';
-      console.log('Generated Text:', generatedText);
-
-      speak(generatedText);
+      setAnswer(generatedText);
     } catch (error) {
-      console.error('Error fetching data from API', error);
-      speak("I'm sorry, I encountered an error while processing your request.");
+      console.log(error);
+      setAnswer("Sorry - Something went wrong. Please try again!");
     } finally {
-      setLoading(false);
-      resetTranscript();
-      setAwake(false);
+      setGeneratingAnswer(false);
+      resetTranscript(); // Clear the transcript after processing
     }
   };
 
   return (
-    <div>
-      <button onClick={handleVoiceCommand}>
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
+      <button
+        onClick={handleVoiceCommand}
+        className={`bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-all duration-300 ${
+          generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
+        }`}
+        disabled={generatingAnswer}
+      >
         {listening ? 'Stop Listening' : 'Start Listening'}
       </button>
-      <p>Status: {awake ? 'Awake' : 'Asleep'}</p>
-      <p>Transcript: {transcript}</p>
+      <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 text-center rounded-lg bg-white my-4 shadow-lg transition-all duration-500 transform hover:scale-105">
+        <p className="p-4">Transcript: {transcript}</p>
+        <p className="p-4">Response: {answer}</p>
+      </div>
     </div>
   );
 };
