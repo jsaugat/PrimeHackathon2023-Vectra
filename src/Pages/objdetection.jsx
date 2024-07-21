@@ -26,7 +26,6 @@ const drawRect = (detections, ctx) => {
     }
 
     const area = width * height;
-    // console.log("AREA: ", area);
     let distance;
     if (area < 40000) {
       distance = "far";
@@ -35,11 +34,9 @@ const drawRect = (detections, ctx) => {
     } else {
       distance = "close";
     }
-    // console.log(distance);
-    
+
     // Set styling
-    // const color = Math.floor(Math.random() * 167).toString(16);
-    const color = "0000FF"
+    const color = "0000FF";
     ctx.strokeStyle = '#' + color;
     ctx.font = '20px Arial';
 
@@ -49,6 +46,11 @@ const drawRect = (detections, ctx) => {
     ctx.fillText(`${text} [position: ${position}] [distance: ${distance}]`, x, y > 10 ? y - 5 : y + 15); // Adjust text position
     ctx.rect(x, y, width, height);
     ctx.stroke();
+
+    // Voice feedback
+    const message = `${text} detected at ${position} and is ${distance}`;
+    const utterance = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(utterance);
   });
 }
 
@@ -143,4 +145,3 @@ function ObjDetection() {
 }
 
 export default ObjDetection;
-

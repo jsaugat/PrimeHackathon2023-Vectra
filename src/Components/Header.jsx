@@ -52,6 +52,14 @@ const Header = () => {
                   Location
                 </Link>
               </li>
+              <li className="mb-4 lg:mb-0 lg:pe-2">
+                <Link
+                  className="block text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2"
+                  to="/speechtotext"
+                >
+                  AI model
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

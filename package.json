@@ -3,14 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/speech": "^6.6.1",
+    "@google-cloud/translate": "^8.3.0",
+    "@speechly/react-client": "^2.2.4",
+    "@speechly/react-ui": "^2.7.5",
     "@tensorflow-models/coco-ssd": "^2.2.3",
     "@tensorflow-models/depth-estimation": "^0.0.4",
     "@tensorflow/tfjs": "^4.20.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vitalets/google-translate-api": "^9.2.0",
     "axios": "^1.7.2",
+<<<<<<< HEAD
     "leaflet": "^1.9.4",
+=======
+    "gtts": "^0.2.1",
+>>>>>>> 84d780a0921f459b1d18c320416c78b33cb578c9
     "react": "^18.3.1",
     "react-camera-pro": "^1.4.0",
     "react-dom": "^18.3.1",
