@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Camera } from 'react-camera-pro';
 
 const CAPTION_API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large";
 const CAPTION_API_HEADERS = {
-  "Authorization": "Bearer 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",
-  "Content-Type": "application/octet-stream"
+    "Authorization": "Bearer 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",
+    "Content-Type": "application/octet-stream"
 };
 
 function ImgCaption() {
@@ -38,8 +38,20 @@ function ImgCaption() {
         queryCaption(blob);
     };
 
+    useEffect(() => {
+        const message = "Image Caption page";
+        const utterance = new SpeechSynthesisUtterance(message);
+        window.speechSynthesis.speak(utterance);
+
+        // Cleanup function to cancel speech synthesis on unmount
+        return () => {
+            window.speechSynthesis.cancel();
+        };
+    }, []);
+
+
     return (
-        <div onClick={ handleCapture } className="App">
+        <div onClick={handleCapture} className="App">
             <div className="camera-container">
                 <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />
             </div>
