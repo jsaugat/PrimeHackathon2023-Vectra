@@ -106,10 +106,9 @@ function ObjDetection() {
   useEffect(()=>{runCoco()},[]);
 
   return (
-    <div style={{height:"360px"}} className="App">
-      <header className="App-header  relative ">
-       <div className="video_wrap_detection relative " >
-       <Webcam
+    <div className="App">
+      <header className="App-header">
+        <Webcam
           ref={webcamRef}
           muted={true} 
           style={{
@@ -117,11 +116,11 @@ function ObjDetection() {
             marginLeft: "auto",
             marginRight: "auto",
             left: 0,
-            bottom:0,
+            right: 0,
             textAlign: "center",
             zindex: 9,
             width: 640,
-            height: "360px",
+            height: 480,
           }}
           videoConstraints={videoConstraints}
         />
@@ -133,13 +132,13 @@ function ObjDetection() {
             marginLeft: "auto",
             marginRight: "auto",
             left: 0,
+            right: 0,
             textAlign: "center",
             zindex: 8,
             width: 640,
             height: 480,
           }}
         />
-       </div>
       </header>
     </div>
   );
