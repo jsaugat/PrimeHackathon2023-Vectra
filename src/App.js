@@ -23,7 +23,7 @@ function App() {
 
        <div style={ {height:"320px"} } className='all_div_wrap' >
        <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route index path='/' element={<Home />} />
           <Route path='/imgcaption' element={<ImgCaption />} />
           <Route path='/testmode1' element={<TestMode1 />} />
           <Route path='/testmode2' element={<TestMode2 />} />

@@ -13,14 +13,14 @@ export default function Gesture() {
     onPointerDown: (state) => {
       longPressTimeout = setTimeout(() => {
         // Trigger your function here
-        if (loco.pathname === "/home") {
+        if (loco.pathname === "/") {
           navigate("/imgcaption");
         } else if (loco.pathname === "/imgcaption") {
           navigate("/testmode1");
         } else if (loco.pathname === "/testmode1") {
           navigate("/testmode2");
         } else if (loco.pathname === "/testmode2") {
-          navigate("/home");
+          navigate("/");
         }
       }, 500); 
     },
@@ -28,7 +28,7 @@ export default function Gesture() {
       clearTimeout(longPressTimeout); 
     },
     onPointerCancel: () => {
-      clearTimeout(longPressTimeout); 
+      clearTimeout(longPressTimeout);  
     },
   });
 
