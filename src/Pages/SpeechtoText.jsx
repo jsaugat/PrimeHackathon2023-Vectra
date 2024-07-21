@@ -8,11 +8,10 @@ export const SpeechToText = () => {
   const [awake, setAwake] = useState(false);
 
   useEffect(() => {
-    if (transcript.toLowerCase().includes('hello sanu')) {
+    if (transcript.toLowerCase().includes('hello ')) {
       setAwake(true);
       resetTranscript();
-      const utterance = new SpeechSynthesisUtterance("How can I help you today?");
-      window.speechSynthesis.speak(utterance);
+      speak("How can I help you today?");
     } else if (awake && transcript && !listening) {
       handleGeminiAPI(transcript);
     }
@@ -31,6 +30,15 @@ export const SpeechToText = () => {
     }
   };
 
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech Synthesis is not supported in this browser.');
+    }
+  };
+
   const handleGeminiAPI = async (command) => {
     setLoading(true);
     console.log('Command:', command);
@@ -40,7 +48,15 @@ export const SpeechToText = () => {
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
       const response = await axios.post(apiUrl, {
-        prompt: command,
+        contents: [
+          {
+            parts: [
+              {
+                text: command
+              }
+            ]
+          }
+        ]
       });
 
       console.log('API Response:', response);
@@ -48,14 +64,10 @@ export const SpeechToText = () => {
       const generatedText = response.data.candidates[0]?.content?.parts[0]?.text || 'No text generated';
       console.log('Generated Text:', generatedText);
 
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(generatedText);
-        window.speechSynthesis.speak(utterance);
-      } else {
-        console.error('Speech Synthesis is not supported in this browser.');
-      }
+      speak(generatedText);
     } catch (error) {
       console.error('Error fetching data from API', error);
+      speak("I'm sorry, I encountered an error while processing your request.");
     } finally {
       setLoading(false);
       resetTranscript();
