@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import axios from 'axios';
 
@@ -6,6 +6,7 @@ export const SpeechToText = () => {
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
   const [answer, setAnswer] = useState('');
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
+  const speechSynthesisRef = useRef(null);  // Ref to manage speech synthesis
 
   const handleVoiceCommand = useCallback(async () => {
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -18,6 +19,10 @@ export const SpeechToText = () => {
       SpeechRecognition.stopListening();
       await handleGeminiAPI(transcript);
     } else {
+      // Interrupt any ongoing speech
+      if (speechSynthesisRef.current) {
+        window.speechSynthesis.cancel();
+      }
       // Start listening
       await SpeechRecognition.startListening({ continuous: true });
     }
@@ -36,12 +41,26 @@ export const SpeechToText = () => {
 
       const generatedText = response.data.candidates[0]?.content?.parts[0]?.text || 'No text generated';
       setAnswer(generatedText);
+
+      // Speak the generated text
+      speak(generatedText);
     } catch (error) {
       console.log(error);
       setAnswer("Sorry - Something went wrong. Please try again!");
+      speak("Sorry - Something went wrong. Please try again!");
     } finally {
       setGeneratingAnswer(false);
       resetTranscript(); // Clear the transcript after processing
+    }
+  };
+
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesisRef.current = utterance;  // Save the utterance in ref
+      window.speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech Synthesis is not supported in this browser.');
     }
   };
 
