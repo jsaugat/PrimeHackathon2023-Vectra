@@ -4,8 +4,8 @@ import { Camera } from 'react-camera-pro';
 
 const CAPTION_API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large";
 const CAPTION_API_HEADERS = {
-  "Authorization": "Bearer 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",
-  "Content-Type": "application/octet-stream"
+    "Authorization": "Bearer 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",
+    "Content-Type": "application/octet-stream"
 };
 
 function ImgCaption() {
@@ -40,7 +40,7 @@ function ImgCaption() {
 
     return (
         <div className="App">
-            <h1>Image Captioning</h1>
+            <h1 className="text-2xl font-bold my-3 uppercase">Image Captioning</h1>
             <div className="camera-container">
                 <Camera ref={camera} aspectRatio={16 / 9} facingMode="environment" />
             </div>
