@@ -7,6 +7,7 @@ import Header from './Components/Header.jsx'; // Ensure the correct path
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home.jsx';
 import VoiceAssist from './Components/VoiceAssist.jsx';
+import {SpeechToText} from './Pages/SpeechtoText.jsx';
 
 function App() {
   return (
@@ -18,9 +19,12 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/objectdetection' element={<ObjDetection />} />
           <Route path='/imgCaption' element={<ImgCaption />} />
+          <Route path='/speechtotext' element={<SpeechToText />} />
+          
           {/* Add more routes here if needed */}
         </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }
