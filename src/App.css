@@ -19,7 +19,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,3 +49,10 @@
   padding-bottom: 0px !important;
 }
 
+.leaflet-container{
+  height: 100% !important;
+}
+
+.eIQnng{
+  height: 280px !important;
+}

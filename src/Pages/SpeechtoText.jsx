@@ -80,20 +80,17 @@ export const SpeechToText = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
+    <div className="bg-gradient-to-r h-full from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
       <button
         onClick={handleVoiceCommand}
-        className={`bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-all duration-300 ${
+        className={`bg-blue-500 text-white p-24 px-32 rounded-md hover:bg-blue-600 transition-all duration-300 ${
           generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
         }`}
         disabled={generatingAnswer}
       >
         {listening ? 'Stop Listening' : 'Start Listening'}
       </button>
-      <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 text-center rounded-lg bg-white my-4 shadow-lg transition-all duration-500 transform hover:scale-105">
-        <p className="p-4">Transcript: {transcript}</p>
-        <p className="p-4">Response: {answer}</p>
-      </div>
+     
     </div>
   );
 };
