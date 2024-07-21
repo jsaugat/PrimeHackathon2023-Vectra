@@ -74,43 +74,48 @@ function ObjDetection() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
   const [currentData, setCurrentData] = useState({ text: '', position: '', distance: '' });
-
-  const runCoco = async () => {
-    const net = await cocossd.load();
-    console.log("COCO-SSD model loaded.");
-    setInterval(() => {
-      detect(net);
-    }, 6000);
-  };
-
-  const detect = async (net) => {
-    if (
-      typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null &&
-      webcamRef.current.video.readyState === 4
-    ) {
-      const video = webcamRef.current.video;
-      const videoWidth = webcamRef.current.video.videoWidth;
-      const videoHeight = webcamRef.current.video.videoHeight;
-
-      webcamRef.current.video.width = videoWidth;
-      webcamRef.current.video.height = videoHeight;
-
-      canvasRef.current.width = videoWidth;
-      canvasRef.current.height = videoHeight;
-
-      const obj = await net.detect(video);
-
-      const ctx = canvasRef.current.getContext("2d");
-      drawRect(obj, ctx, setCurrentData);
-    }
-  };
+  const [net, setNet] = useState(null);
 
   useEffect(() => {
-    runCoco();
+    const loadModel = async () => {
+      const model = await cocossd.load();
+      setNet(model);
+      console.log("COCO-SSD model loaded.");
+    };
+    loadModel();
   }, []);
 
   useEffect(() => {
+    if (net) {
+      const detect = async () => {
+        if (
+          typeof webcamRef.current !== "undefined" &&
+          webcamRef.current !== null &&
+          webcamRef.current.video.readyState === 4
+        ) {
+          const video = webcamRef.current.video;
+          const videoWidth = webcamRef.current.video.videoWidth;
+          const videoHeight = webcamRef.current.video.videoHeight;
+
+          webcamRef.current.video.width = videoWidth;
+          webcamRef.current.video.height = videoHeight;
+
+          canvasRef.current.width = videoWidth;
+          canvasRef.current.height = videoHeight;
+
+          const obj = await net.detect(video);
+
+          const ctx = canvasRef.current.getContext("2d");
+          drawRect(obj, ctx, setCurrentData);
+        }
+        requestAnimationFrame(detect);
+      };
+      detect();
+    }
+  }, [net]);
+
+  useEffect(() => {
+    console.log(currentData.text)
     if (currentData.text) {
       const { text, position, distance } = currentData;
       const message = `${text} detected at ${position} and it is ${distance}`;
@@ -136,7 +141,7 @@ function ObjDetection() {
             width: 640,
             height: 480,
           }}
-          videoConstraints={videoConstraints}
+          // videoConstraints={videoConstraints}
         />
 
         <canvas
