@@ -26,7 +26,7 @@ const Location = () => {
 
   return (
     <div>
-      <h1>Current Location</h1>
+      <h1 className="text-2xl font-bold my-3 uppercase">Current Location</h1>
       {error && <p>Error: {error}</p>}
       {location ? (
         <div>
