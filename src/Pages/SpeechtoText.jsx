@@ -79,18 +79,28 @@ export const SpeechToText = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const message = "Assistant Chatbot page";
+    const utterance = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(utterance);
+
+    // Cleanup function to cancel speech synthesis on unmount
+    return () => {
+      window.speechSynthesis.cancel();
+    };
+  }, []);
+
   return (
-    <div className="bg-gradient-to-r h-full from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
+    <div className="bg-gradient-to-r  from-blue-50 to-blue-100  p-3 flex flex-col justify-center items-center">
       <button
         onClick={handleVoiceCommand}
-        className={`bg-blue-500 text-white p-24 px-32 rounded-md hover:bg-blue-600 transition-all duration-300 ${
-          generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
-        }`}
+        className={`bg-blue-500 text-white p-24 px-32 rounded-md hover:bg-blue-600 transition-all duration-300 ${generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
         disabled={generatingAnswer}
       >
         {listening ? 'Stop Listening' : 'Start Listening'}
       </button>
-     
+
     </div>
   );
 };

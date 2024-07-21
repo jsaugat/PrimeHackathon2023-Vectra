@@ -124,6 +124,17 @@ function ObjDetection() {
     }
   }, [currentData]);
 
+  useEffect(() => {
+    const message = "Object Detection page";
+    const utterance = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(utterance);
+
+    // Cleanup function to cancel speech synthesis on unmount
+    return () => {
+      window.speechSynthesis.cancel();
+    };
+  }, []);
+
   return (
     <div className="App overflow-y-hidden h-full ">
       <header className="App-header h-full">
@@ -139,7 +150,7 @@ function ObjDetection() {
             textAlign: "center",
             zIndex: 9,
             width: "100%",
-            height:330,
+            height: 330,
           }}
           videoConstraints={videoConstraints}
         />
