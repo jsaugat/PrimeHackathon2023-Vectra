@@ -60,7 +60,7 @@ const drawRect = (detections, ctx, setCurrentData) => {
         window.speechSynthesis.cancel();
         currentUtterance = null;
       }
-    }, 10000); // Pause after 10 seconds
+    }, 6000); // Pause after 10 seconds
   });
 }
 
@@ -141,7 +141,7 @@ function ObjDetection() {
             width: "100%",
             height:330,
           }}
-          // videoConstraints={videoConstraints}
+          videoConstraints={videoConstraints}
         />
 
         <canvas
