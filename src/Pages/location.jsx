@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Map from '../Components/Map';
 
+// hello location
 const Location = () => {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
