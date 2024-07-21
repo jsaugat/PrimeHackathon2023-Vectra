@@ -19,7 +19,7 @@ function App() {
 
         <Header />
         {/* <VoiceAssist /> */}
-        <div style={{height:"360px"}} >
+        <div style={{height:"240px"}} >
           <Routes>
             <Route path='/' element={<ObjDetection />} />
             <Route path='/imgcaption' element={<ImgCaption />} />

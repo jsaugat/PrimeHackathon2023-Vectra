@@ -26,11 +26,9 @@ const Location = () => {
   }, [navigator.geolocation]);
 
   return (
-    <div style={{height:"360px"}} >
-      <h1 className="text-xl font-bold my-3 uppercase">Current Location</h1>
+    <div style={{height:"100%"}} >
       {error && <p>Error: {error}</p>}
       {location ? (
-        <div>
          
           <Map
             latitude={location.latitude}
@@ -38,7 +36,6 @@ const Location = () => {
             address={address}
             setAddress={setAddress}
           />
-        </div>
       ) : (
         <p>Fetching location...</p>
       )}

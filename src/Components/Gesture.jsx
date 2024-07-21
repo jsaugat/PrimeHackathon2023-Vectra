@@ -87,8 +87,8 @@ export default function Gesture() {
     <div className='absolute bottom-20'>
     <div style={{width:"360px" ,height:"60px"}} className="absolute left-4 bg-white border shadow-md mx-auto grid gap-3">
       <div className="flex justify-between w-full">
-        <button className=' p-0.5 w-1/2 px-2.5 bg-blue-500 text-white' onClick={SpeechRecognition.startListening}>Start</button>
-        <button className=' p-0.5 w-1/2 px-2.5 bg-red-500 text-white' onClick={SpeechRecognition.stopListening}>Stop</button>
+        <button className=' p-0.5 w-1/2 px-2.5 bg-blue-500 text-white' onClick={SpeechRecognition.startListening}></button>
+        <button className=' p-0.5 w-1/2 px-2.5 bg-red-500 text-white' onClick={SpeechRecognition.stopListening}></button>
       </div>
     </div>
     </div>

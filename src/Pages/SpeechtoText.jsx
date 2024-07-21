@@ -83,7 +83,7 @@ export const SpeechToText = () => {
     <div className="bg-gradient-to-r h-full from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
       <button
         onClick={handleVoiceCommand}
-        className={`bg-blue-500 text-white p-36 px-36 rounded-md hover:bg-blue-600 transition-all duration-300 ${
+        className={`bg-blue-500 text-white p-24 px-32 rounded-md hover:bg-blue-600 transition-all duration-300 ${
           generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
         }`}
         disabled={generatingAnswer}
