@@ -14,7 +14,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-      <VoiceAssist/>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/objectdetection' element={<ObjDetection />} />
