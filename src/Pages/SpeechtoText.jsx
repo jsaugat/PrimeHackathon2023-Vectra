@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import axios from 'axios';
 
@@ -7,6 +7,7 @@ export const SpeechToText = () => {
   const [answer, setAnswer] = useState('');
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
   const speechSynthesisRef = useRef(null);  // Ref to manage speech synthesis
+  const listeningTimeoutRef = useRef(null); // Ref to manage timeout
 
   const handleVoiceCommand = useCallback(async () => {
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -17,14 +18,19 @@ export const SpeechToText = () => {
     if (listening) {
       // Stop listening and send the transcription to Gemini API
       SpeechRecognition.stopListening();
+      clearTimeout(listeningTimeoutRef.current); // Clear the timeout if already set
       await handleGeminiAPI(transcript);
     } else {
       // Interrupt any ongoing speech
       if (speechSynthesisRef.current) {
         window.speechSynthesis.cancel();
       }
-      // Start listening
+      // Start listening and set a timeout to stop after 10 seconds
       await SpeechRecognition.startListening({ continuous: true });
+      listeningTimeoutRef.current = setTimeout(() => {
+        SpeechRecognition.stopListening();
+        handleGeminiAPI(transcript);
+      }, 10000); // 10 seconds
     }
   }, [listening, transcript]);
 
@@ -40,14 +46,16 @@ export const SpeechToText = () => {
       );
 
       const generatedText = response.data.candidates[0]?.content?.parts[0]?.text || 'No text generated';
-      setAnswer(generatedText);
+      const cleanedText = generatedText.replace(/\*/g, ''); // Remove asterisks
+      setAnswer(cleanedText);
 
-      // Speak the generated text
-      speak(generatedText);
+      // Speak the cleaned text
+      speak(cleanedText);
     } catch (error) {
       console.log(error);
-      setAnswer("Sorry - Something went wrong. Please try again!");
-      speak("Sorry - Something went wrong. Please try again!");
+      const errorMessage = "Sorry - Something went wrong. Please try again!";
+      setAnswer(errorMessage);
+      speak(errorMessage);
     } finally {
       setGeneratingAnswer(false);
       resetTranscript(); // Clear the transcript after processing
@@ -63,6 +71,13 @@ export const SpeechToText = () => {
       console.error('Speech Synthesis is not supported in this browser.');
     }
   };
+
+  // Cleanup timeout on component unmount
+  useEffect(() => {
+    return () => {
+      clearTimeout(listeningTimeoutRef.current);
+    };
+  }, []);
 
   return (
     <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
