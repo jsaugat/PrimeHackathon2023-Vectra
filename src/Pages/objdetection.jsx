@@ -136,6 +136,7 @@ function ObjDetection() {
             width: 640,
             height: 480,
           }}
+          videoConstraints={videoConstraints}
         />
 
         <canvas
