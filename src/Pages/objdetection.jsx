@@ -106,8 +106,8 @@ function ObjDetection() {
   useEffect(()=>{runCoco()},[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App overflow-y-hidden h-full ">
+      <header className="App-header h-full">
         <Webcam
           ref={webcamRef}
           muted={true} 
@@ -119,8 +119,8 @@ function ObjDetection() {
             right: 0,
             textAlign: "center",
             zindex: 9,
-            width: 640,
-            height: 480,
+            width: "100%",
+            height: 360,
           }}
           // videoConstraints={videoConstraints}
         />
@@ -135,8 +135,8 @@ function ObjDetection() {
             right: 0,
             textAlign: "center",
             zindex: 8,
-            width: 640,
-            height: 480,
+            width: "100%",
+            height: 360,
           }}
         />
       </header>
