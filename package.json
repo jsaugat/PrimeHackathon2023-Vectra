@@ -17,6 +17,8 @@
     "axios": "^1.7.2",
     "leaflet": "^1.9.4",
     "gtts": "^0.2.1",
+    "@use-gesture/react": "^10.3.1",
+    "lucide-react": "^0.411.0",
     "react": "^18.3.1",
     "react-camera-pro": "^1.4.0",
     "react-dom": "^18.3.1",

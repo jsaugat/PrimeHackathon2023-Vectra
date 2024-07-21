@@ -2,8 +2,8 @@
   text-align: center;
 }
 .camera-container {
-  width: 80%;  /* or any desired width */
-  max-width: 600px;  /* optional: set a maximum width */
+  width: 100%;  /* or any desired width */
+  /* max-width: 600px;  */
   margin: 0 auto;  /* centers the container */
 }
 .App-logo {
@@ -40,3 +40,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* overwriting  */
+
+.cNjdVN {
+  height:320px !important;
+  padding-bottom: 0px !important;
+}
+
