@@ -84,7 +84,7 @@ export default function Gesture() {
 
   return (
     <div style={{ backgroundImage: ' radial-gradient(circle, rgba(4,0,59,1) 0%, rgba(0,0,0,1) 100%)', height: "100%" }} className='pt-5 gesture section bg-cyan-500' {...bind()}>
-      <div className='absolute bottom-0 w-full'>
+      <div className='absolute bottom-10 w-full'>
         <div style={{ width: "100%", height: "60px" }} className="absolute  bg-white border shadow-md mx-auto grid gap-3">
           <div className="flex justify-between w-full">
             <button className=' p-0.5 w-1/2 px-2.5 bg-blue-500 text-white' onClick={SpeechRecognition.startListening}></button>
